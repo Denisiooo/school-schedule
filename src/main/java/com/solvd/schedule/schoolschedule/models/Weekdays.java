@@ -1,12 +1,14 @@
-package models;
+package com.solvd.schedule.schoolschedule.models;
 
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table (name = "Weekdays")
 @Data
+@NoArgsConstructor
 public class Weekdays {
     @Id
     @Column
