@@ -1,4 +1,4 @@
-package com.solvd.schedule.schoolschedule.service;
+package com.solvd.schedule.schoolschedule.services;
 
 import com.solvd.schedule.schoolschedule.models.Teachers;
 import com.solvd.schedule.schoolschedule.repositorys.ITeachersRepository;

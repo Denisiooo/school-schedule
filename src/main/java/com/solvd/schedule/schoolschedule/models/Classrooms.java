@@ -5,14 +5,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Classrooms")
-@Data
 @NoArgsConstructor
+@Data
+@Table(name = "classrooms")
 public class Classrooms {
     @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.AUTO) //AUTO, SEQUENCE, TABLE
-    private int ClassroomId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ClassroomId", nullable = false)
+    private Long id;
+
     @Column
     private int ClassroomNumber;
+
 }

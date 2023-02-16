@@ -13,7 +13,7 @@ public class Weekdays {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO) //AUTO, SEQUENCE, TABLE
-    private int WeekdaysId;
+    private long WeekdayId;
     @Column
     private String DayName;
 

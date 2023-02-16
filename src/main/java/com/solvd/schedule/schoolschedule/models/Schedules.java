@@ -11,22 +11,20 @@ import lombok.NoArgsConstructor;
 public class Schedules {
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.AUTO) //AUTO, SEQUENCE, TABLE
-    private int SchedulesId;
-    @JoinColumn(name = "teacherId",referencedColumnName = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //AUTO, SEQUENCE, TABLE
+    private long SchedulesId;
+    @JoinColumn(name = "teacher_Id",referencedColumnName = "TeacherId")
     @ManyToOne(cascade = CascadeType.ALL)
-    private int TeacherId;
-    @JoinColumn(name = "lessonId",referencedColumnName = "id")
+    private Teachers TeacherId;
+    @JoinColumn(name = "Lesson_Id",referencedColumnName = "LessonId")
     @ManyToOne(cascade = CascadeType.ALL)
-    private int LessonId;
-    @JoinColumn(name = "classroomId",referencedColumnName = "id")
+    private Lessons LessonId;
+    private long ClassroomId;
+    @JoinColumn(name = "Weekday_Id",referencedColumnName = "WeekdayId")
     @ManyToOne(cascade = CascadeType.ALL)
-    private int ClassroomId;
-    @JoinColumn(name = "weekdaysId",referencedColumnName = "id")
+    private Weekdays WeekdaysId;
+    @JoinColumn(name = "Klass_Id",referencedColumnName = "ClassId")
     @ManyToOne(cascade = CascadeType.ALL)
-    private int WeekdaysId;
-    @JoinColumn(name = "classId",referencedColumnName = "id")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private int ClassId;
+    private Classes ClassId;
 
 }

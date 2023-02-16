@@ -12,13 +12,13 @@ public class Students {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO) //AUTO, SEQUENCE, TABLE
-    private int StudentId;
+    private long StudentId;
     @Column
     private String StudentName;
     @Column
     private String StudentSurname;
-    @JoinColumn(name = "classId",referencedColumnName = "id")
+    @JoinColumn(name = "klassId",referencedColumnName = "ClassId")
     @ManyToOne
-    private int ClassId;
+    private Classes ClassId;
 
 }
