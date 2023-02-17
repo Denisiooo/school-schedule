@@ -1,23 +1,22 @@
 package com.solvd.schedule.schoolschedule.models;
 
 
-import com.solvd.schedule.schoolschedule.services.WeekdaysService;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table (name = "Weekdays")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Weekdays {
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.AUTO) //AUTO, SEQUENCE, TABLE
     private long WeekdayId;
-    @Column
     private String DayName;
 
 }

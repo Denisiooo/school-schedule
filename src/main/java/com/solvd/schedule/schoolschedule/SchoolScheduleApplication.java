@@ -48,7 +48,7 @@ public class SchoolScheduleApplication implements CommandLineRunner {
 		Weekdays[] weekdays=classGeneration.getWeekdays();
 		Classes[] classes=classGeneration.getClasses();
 
-		for (int i=0;i<1;i++){
+		for (int i=0;i< weekdays.length;i++){
 			int oo=0;
 			for(int j=0;j<classes.length;j++){
 				defaultValues.setStaticTeacher();
@@ -58,20 +58,16 @@ public class SchoolScheduleApplication implements CommandLineRunner {
 //				for (int t=0;t<resultCheck.length;t++)
 //				logger.info(resultCheck[t].toString());
 
-
 				Hromosome[] result=algorithm.start(random_int,resultCheck,oo);
-				logger.info("========");
 				for(int t1=0;t1<random_int;t1++)
 					logger.info(result[t1].toString());
 				oo++;
-
-
+				logger.info("========");
 			}
 		}
 	}
 	private Hromosome[] getUniqHromosome(Hromosome[] hromosomes){
 		HashSet<Hromosome> hromosomes1=new HashSet<>();
-		System.out.println(hromosomes.length);
 		for(int i=0;i<hromosomes.length;i++){
 			hromosomes1.add(hromosomes[i]);
 		}

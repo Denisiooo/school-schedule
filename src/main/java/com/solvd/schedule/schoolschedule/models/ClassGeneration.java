@@ -23,19 +23,15 @@ public class ClassGeneration {
 
     public Weekdays[] getWeekdays(){
         Weekdays[] weekdays=new Weekdays[5];
-        weekdays[0]=weekdaysService.getWeekdays(1);
-        weekdays[1]=weekdaysService.getWeekdays(2);
-        weekdays[2]=weekdaysService.getWeekdays(3);
-        weekdays[3]=weekdaysService.getWeekdays(4);
-        weekdays[4]=weekdaysService.getWeekdays(5);
+        for(int i=0;i<weekdays.length;i++)
+            weekdays[i]=weekdaysService.getWeekdays(i+1);
         return weekdays;
     }
 
     public Classes[] getClasses(){
         Classes[] classes=new Classes[3];
-        classes[0]=classesService.getClasses(1);
-        classes[1]=classesService.getClasses(2);
-        classes[2]=classesService.getClasses(3);
+        for (int i=0;i<classes.length;i++)
+            classes[i]=classesService.getClasses(i+1);
         return classes;
     }
 
@@ -68,10 +64,6 @@ public class ClassGeneration {
             Subjects subjects=getRandomSubject();
             Teachers teachers=getRandomTeacher();
             hromosomes[h]=new Hromosome(subjects,teachers, subjects.getR()+teachers.getR(),String.valueOf(subjects.getH())+String.valueOf(teachers.getH()));
-//            subjects.setR(subjects.getR()+50);
-//            teachers.setR(teachers.getR()+50);
-//            subjectService.updateSubjects(subjects);
-//            teachersService.updateTeachers(teachers);
         }
         return hromosomes;
     }
