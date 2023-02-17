@@ -39,27 +39,26 @@ public class ClassGeneration {
         return classes;
     }
 
+    public Subjects[] getSubjects(){
+        Subjects[] subjects=new Subjects[6];
+        for(int i=0;i<subjects.length;i++)
+            subjects[i]=subjectService.getSubjects(i+1);
+        return subjects;
+    }
+
     public Subjects getRandomSubject(){
-        int random_int = (int)Math.floor(Math.random() * (4 - 1 + 1) + 1);
+        int random_int = (int)Math.floor(Math.random() * (5 - 1 + 0) + 0);
         Subjects[] subjects=new Subjects[5];
-        subjects[0]=subjectService.getSubjects(1);
-        subjects[1]=subjectService.getSubjects(2);
-        subjects[2]=subjectService.getSubjects(3);
-        subjects[3]=subjectService.getSubjects(4);
-        subjects[4]=subjectService.getSubjects(5);
+        for(int i=0;i<subjects.length;i++)
+            subjects[i]=subjectService.getSubjects(i+1);
         return subjects[random_int];
     }
 
     public Teachers getRandomTeacher(){
-       int random_int = (int)Math.floor(Math.random() * (6 - 1 + 1) + 1);
+       int random_int = (int)Math.floor(Math.random() * (6 - 1 + 0) + 0);
        Teachers[] teachers=new Teachers[7];
-       teachers[0]=teachersService.getTeachers(1);
-       teachers[1]=teachersService.getTeachers(2);
-       teachers[2]=teachersService.getTeachers(3);
-       teachers[3]=teachersService.getTeachers(4);
-       teachers[4]=teachersService.getTeachers(5);
-       teachers[5]=teachersService.getTeachers(6);
-       teachers[6]=teachersService.getTeachers(7);
+       for(int i=0;i<teachers.length;i++ )
+           teachers[i]=teachersService.getTeachers(i+1);
        return teachers[random_int];
     }
 
@@ -68,11 +67,11 @@ public class ClassGeneration {
         for(int h=0;h<20;h++){
             Subjects subjects=getRandomSubject();
             Teachers teachers=getRandomTeacher();
-            hromosomes[h]=new Hromosome(h,subjects,teachers, subjects.getR()+teachers.getR(),String.valueOf(subjects.getH())+String.valueOf(teachers.getH()));
-            subjects.setR(subjects.getR()+50);
-            teachers.setR(teachers.getR()+50);
-            subjectService.updateSubjects(subjects);
-            teachersService.updateTeachers(teachers);
+            hromosomes[h]=new Hromosome(subjects,teachers, subjects.getR()+teachers.getR(),String.valueOf(subjects.getH())+String.valueOf(teachers.getH()));
+//            subjects.setR(subjects.getR()+50);
+//            teachers.setR(teachers.getR()+50);
+//            subjectService.updateSubjects(subjects);
+//            teachersService.updateTeachers(teachers);
         }
         return hromosomes;
     }
