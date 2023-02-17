@@ -5,6 +5,7 @@ import com.solvd.schedule.schoolschedule.repositorys.ISubjectsRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,5 +37,12 @@ public class SubjectService {
     @Transactional
     public void deleteSubjects(long id) {
         iSubjectsRepository.deleteById(id);
+    }
+
+    @Transactional
+    public List<Subjects> getAll(){
+        List<Subjects> subjects= (List<Subjects>) iSubjectsRepository.findAll();
+        return subjects;
+
     }
 }

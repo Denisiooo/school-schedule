@@ -13,10 +13,14 @@ public class Teachers {
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO) //AUTO, SEQUENCE, TABLE
     private int TeacherId;
-    @Column
+    @Column(name = "TeacherName")
     private String TeacherName;
-    @Column
+    @Column(name = "TeachersSurname")
     private String TeacherSurname;
-    @Column
+    @Column(name = "TeacherExperience")
     private int TeacherExperience;
+    @Column
+    private long R;
+    @Column
+    private long H;
 }

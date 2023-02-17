@@ -1,7 +1,9 @@
 package com.solvd.schedule.schoolschedule.models;
 
 
+import com.solvd.schedule.schoolschedule.services.WeekdaysService;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Table (name = "Weekdays")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Weekdays {
     @Id
     @Column

@@ -5,6 +5,7 @@ import com.solvd.schedule.schoolschedule.repositorys.ITeachersRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -36,5 +37,11 @@ public class TeachersService {
     @Transactional
     public void deleteTeachers(long id) {
         iTeachersRepository.deleteById(id);
+    }
+
+    @Transactional
+    public List<Teachers> getAll(){
+        List<Teachers> teachers= (List<Teachers>) iTeachersRepository.findAll();
+        return teachers;
     }
 }
