@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class WeekdaysService {
 
     private IWeekdaysRepository iWeekdaysRepository;
@@ -21,7 +22,6 @@ public class WeekdaysService {
         return iWeekdaysRepository.save(weekdays);
     }
 
-    @Transactional
     public Weekdays getWeekdays(long id) {
         Optional<Weekdays> weekdays = iWeekdaysRepository.findById(id);
         if (weekdays.isEmpty()) return null;

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class SchedulesService {
 
     private ISchedulesRepository iSchedulesRepository;
@@ -21,7 +22,6 @@ public class SchedulesService {
         return iSchedulesRepository.save(schedules);
     }
 
-    @Transactional
     public Schedules getSchedules(long id) {
         Optional<Schedules> schedules = iSchedulesRepository.findById(id);
         if (schedules.isEmpty()) return null;

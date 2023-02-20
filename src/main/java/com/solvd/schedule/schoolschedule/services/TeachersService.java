@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class TeachersService {
 
     private ITeachersRepository iTeachersRepository;
@@ -22,7 +23,6 @@ public class TeachersService {
         return iTeachersRepository.save(teachers);
     }
 
-    @Transactional
     public Teachers getTeachers(long id) {
         Optional<Teachers> teachers = iTeachersRepository.findById(id);
         if (teachers.isEmpty()) return null;
@@ -39,7 +39,6 @@ public class TeachersService {
         iTeachersRepository.deleteById(id);
     }
 
-    @Transactional
     public List<Teachers> getAll(){
         List<Teachers> teachers= (List<Teachers>) iTeachersRepository.findAll();
         return teachers;

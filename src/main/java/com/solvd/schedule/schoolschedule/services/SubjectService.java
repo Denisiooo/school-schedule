@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class SubjectService {
 
     private ISubjectsRepository iSubjectsRepository;
@@ -22,7 +23,6 @@ public class SubjectService {
         return iSubjectsRepository.save(subjects);
     }
 
-    @Transactional
     public Subjects getSubjects(long id) {
         Optional<Subjects> subjects = iSubjectsRepository.findById(id);
         if (subjects.isEmpty()) return null;
@@ -39,13 +39,11 @@ public class SubjectService {
         iSubjectsRepository.deleteById(id);
     }
 
-    @Transactional
     public List<Subjects> getAll() {
         List<Subjects> subjects = (List<Subjects>) iSubjectsRepository.findAll();
         return subjects;
     }
 
-    @Transactional
     public int countAll() {
         List<Subjects> subjects = (List<Subjects>) iSubjectsRepository.findAll();
         return subjects.size();

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class LessonService {
 
     private ILessonsRepository iLessonsRepository;
@@ -21,7 +22,6 @@ public class LessonService {
         return iLessonsRepository.save(lessons);
     }
 
-    @Transactional
     public Lessons getLessons(long id) {
         Optional<Lessons> lessons = iLessonsRepository.findById(id);
         if (lessons.isEmpty()) return null;
