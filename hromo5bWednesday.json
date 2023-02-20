@@ -1,0 +1,93 @@
+[
+  {
+    "subjects": {
+      "SubjectId": 3,
+      "SubjectTitle": "Programming",
+      "R": 5,
+      "H": 3,
+      "h": 3,
+      "subjectTitle": "Programming",
+      "r": 5,
+      "subjectId": 3
+    },
+    "teachers": {
+      "TeacherId": 5,
+      "TeacherName": "Tammy",
+      "TeacherSurname": "Taylor",
+      "TeacherExperience": 15,
+      "R": 2,
+      "H": 5,
+      "h": 5,
+      "r": 2,
+      "teacherExperience": 15,
+      "teacherId": 5,
+      "teacherSurname": "Taylor",
+      "teacherName": "Tammy"
+    },
+    "R": 77,
+    "H": "35",
+    "h": "35",
+    "r": 77
+  },
+  {
+    "subjects": {
+      "SubjectId": 1,
+      "SubjectTitle": "Maths",
+      "R": 23,
+      "H": 1,
+      "h": 1,
+      "subjectTitle": "Maths",
+      "r": 23,
+      "subjectId": 1
+    },
+    "teachers": {
+      "TeacherId": 3,
+      "TeacherName": "Jill",
+      "TeacherSurname": "Smith",
+      "TeacherExperience": 5,
+      "R": 10,
+      "H": 3,
+      "h": 3,
+      "r": 10,
+      "teacherExperience": 5,
+      "teacherId": 3,
+      "teacherSurname": "Smith",
+      "teacherName": "Jill"
+    },
+    "R": 33,
+    "H": "13",
+    "h": "13",
+    "r": 33
+  },
+  {
+    "subjects": {
+      "SubjectId": 4,
+      "SubjectTitle": "Physics",
+      "R": 26,
+      "H": 4,
+      "h": 4,
+      "subjectTitle": "Physics",
+      "r": 26,
+      "subjectId": 4
+    },
+    "teachers": {
+      "TeacherId": 5,
+      "TeacherName": "Tammy",
+      "TeacherSurname": "Taylor",
+      "TeacherExperience": 15,
+      "R": 2,
+      "H": 5,
+      "h": 5,
+      "r": 2,
+      "teacherExperience": 15,
+      "teacherId": 5,
+      "teacherSurname": "Taylor",
+      "teacherName": "Tammy"
+    },
+    "R": 28,
+    "H": "45",
+    "h": "45",
+    "r": 28
+  },
+  null
+]

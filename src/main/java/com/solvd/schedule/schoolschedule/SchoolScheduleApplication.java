@@ -1,5 +1,6 @@
 package com.solvd.schedule.schoolschedule;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.solvd.schedule.schoolschedule.models.*;
 import com.solvd.schedule.schoolschedule.repositorys.ISubjectsRepository;
 import com.solvd.schedule.schoolschedule.services.ClassesService;
@@ -10,6 +11,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -38,7 +41,24 @@ public class SchoolScheduleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws SubjectException {
-        getStart();
+        while (choise()!=true){
+
+        }
+    }
+
+    private boolean choise() throws SubjectException {
+        logger.info("1-Activate, 2- Exit");
+        int k=scanner.nextInt();
+        switch (k){
+            case 1: getStart();
+            break;
+            case 2: return true;
+
+            default:return false;
+        }
+        choise();
+        return false;
+
     }
 
     public void getStart() throws SubjectException {
@@ -65,6 +85,14 @@ public class SchoolScheduleApplication implements CommandLineRunner {
 //				logger.info(resultCheck[t].toString());
 
                 Hromosome[] result = algorithm.start(random_int, resultCheck, oo);
+                String path="hromo"+classes[j].getClassTitle()+weekdays[i].getDayName();
+                try {
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    objectMapper.writeValue(new File(path+".json"),result);
+                } catch (IOException e) {
+                    logger.warn("Error of creating json");
+                }
+
                 for (int t1 = 0; t1 < random_int; t1++)
                     logger.info(result[t1].toString());
                 oo++;

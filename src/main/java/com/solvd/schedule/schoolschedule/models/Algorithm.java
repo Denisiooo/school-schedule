@@ -22,9 +22,19 @@ public class Algorithm {
         List<Hromosome> hromosomesList = Arrays.stream(hromosomes).toList();
         Hromosome[] result = new Hromosome[count + 1];
         if(oo%2!=0)
-            for (int i=0;i<3;i++){
+            for (int i=0;i<count;i++){
                 hromosomesList.get(i).setR(hromosomesList.get(i).getR()+70);
             }
+
+        int random_int = (int)Math.floor(Math.random() * (100 - 1 + 0) + 0);
+        if(random_int<10){
+            int rand=(int)Math.floor(Math.random() * (hromosomes.length - 1 + 0) + 0);
+            hromosomes[rand].setSubjects(classGeneration.getRandomSubject());
+            hromosomes[rand].setTeachers(classGeneration.getRandomTeacher());
+            hromosomes[rand].setR(hromosomes[rand].getSubjects().getR()+ hromosomes[rand].getTeachers().getR());
+            hromosomes[rand].setH(String.valueOf(hromosomes[rand].getSubjects().getH())+ String.valueOf(hromosomes[rand].getTeachers().getH()));
+        }
+
         hromosomesList=firstCheck(hromosomesList);
         for (int i = 0; i < count; i++)
             result[i] = hromosomesList.get(i);

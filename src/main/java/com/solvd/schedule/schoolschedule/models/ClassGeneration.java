@@ -36,7 +36,7 @@ public class ClassGeneration {
     }
 
     public Subjects[] getSubjects(){
-        Subjects[] subjects=new Subjects[6];
+        Subjects[] subjects=new Subjects[subjectService.countAll()];
         for(int i=0;i<subjects.length;i++)
             subjects[i]=subjectService.getSubjects(i+1);
         return subjects;
