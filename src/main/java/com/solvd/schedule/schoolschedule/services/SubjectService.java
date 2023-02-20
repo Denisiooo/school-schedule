@@ -43,9 +43,9 @@ public class SubjectService {
     public List<Subjects> getAll() {
         List<Subjects> subjects = (List<Subjects>) iSubjectsRepository.findAll();
         return subjects;
-
     }
 
+    @Transactional
     public int countAll() {
         List<Subjects> subjects = (List<Subjects>) iSubjectsRepository.findAll();
         return subjects.size();
