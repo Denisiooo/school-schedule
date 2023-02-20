@@ -36,14 +36,17 @@ public class SchoolScheduleApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) {
+	public void run(String... args) throws SubjectException {
 		getStart();
 	}
 
-	public void getStart(){
+	public void getStart() throws SubjectException {
 		logger.info("Insert min, max lessons");
 		int min=scanner.nextInt();
 		int max=scanner.nextInt();
+		if (min<1 || max>4){
+			throw new SubjectException("The minimum number of lessons must be 1, the maximum number of lessons must be 4");
+		}
 		int random_int = (int)Math.floor(Math.random() * (max - min + 1) + min);
 		Weekdays[] weekdays=classGeneration.getWeekdays();
 		Classes[] classes=classGeneration.getClasses();
